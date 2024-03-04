@@ -93,7 +93,7 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 -- Netrw config
-vim.g.netrw_banner = 0 -- disable Netrw banner
+vim.g.netrw_banner = 1 -- disable Netrw banner
 
 -- [[ Setting options ]]
 -- See `:help vim.o`

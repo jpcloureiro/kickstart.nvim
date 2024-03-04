@@ -455,7 +455,17 @@ require('lazy').setup({
         }
       end, { desc = '[S]earch [/] in Open Files' })
 
-      -- Shortcut for searching your Neovim configuration files
+      -- Live grep into user input directory
+      --  See `:help telescope.builtin.live_grep()`  for more information about the Option {search_dirs}
+      vim.keymap.set('n', '<leader>sx', function()
+        local input_dir = vim.fn.input 'Directory '
+        builtin.live_grep {
+          search_dirs = { input_dir },
+          prompt_title = 'Live Grep in Directory',
+        }
+      end, { desc = '[S]earch [x] in Directory' })
+
+      -- Shortcut for searching your neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })

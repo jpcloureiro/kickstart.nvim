@@ -695,6 +695,7 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
+        -- Customize or remove this keymap to your liking
         '<leader>f',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }

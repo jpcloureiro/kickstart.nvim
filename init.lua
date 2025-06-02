@@ -183,6 +183,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -467,10 +468,9 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sf', function()
         -- You can pass additional configuration to telescope to change theme, layout, etc.
         builtin.find_files(require('telescope.themes').get_dropdown {
-          winblend = 10,
           previewer = false,
         })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      end, { desc = '[S]earch [F]iles' })
 
       -- Live grep into user input directory
       --  See `:help telescope.builtin.live_grep()`  for more information about the Option {search_dirs}
